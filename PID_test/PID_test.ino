@@ -2,7 +2,7 @@
 
 // Tuning parameters
 float Kp=1; //Initial Proportional Gain
-float Ki=0.1	; //Initial Integral Gain
+float Ki=0.1  ; //Initial Integral Gain
 float Kd=0.15; //Initial Differential Gain
 double Setpoint, Input, Output; //These are just variables for storingvalues
 PID myPID(&Input, &Output, &Setpoint, Kp, Ki, Kd, DIRECT);
@@ -19,11 +19,12 @@ unsigned long now = 0; //This variable is used to keep track of time
 unsigned long lastMessage = 0; //This keeps track of when our loop last spoke to serial
 // last message timestamp.
 void setup(){
+   Serial.begin(9600);
  String inString = Serial.readString();
  Input = inString.toDouble(); //Change read scale to analog
  Setpoint = analogRead(5);
 //get our setpoint from our pot
- Serial.begin(9600); //Start a serial session
+ //Start a serial session
  myPID.SetMode(AUTOMATIC); //Turn on the PID loop
  myPID.SetSampleTime(sampleRate); //Sets the sample rate
 

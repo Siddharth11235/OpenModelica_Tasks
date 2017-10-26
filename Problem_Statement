@@ -1,0 +1,7 @@
+The problem involves building a H-I-L simulation with a DC motor as a software plant, and a proportional control algorithm running on the Arduino. The process is expected to run in real time. Which means that a delay should not be used. The suggestion to use IRQ software interrupts has been made.
+
+The proportional control algorithm will have to be written with the current firmware, it seems at the moment.
+
+The reason a interrupt needs to be used is that it is event based instead of delay, which is time based.
+
+The function suggested for usage is SIGALARM.
