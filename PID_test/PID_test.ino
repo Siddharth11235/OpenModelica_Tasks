@@ -1,4 +1,5 @@
 #include <PID_v1.h>
+#include <math.h>
 
 //Define Variables we'll be connecting to
 double Setpoint;
@@ -21,6 +22,8 @@ void setup()
 
 void loop()
 {
+  Serial.println(analogRead(A5));
+  delay(10);
   Input = analogRead(A4);
   myPID.Compute();
   analogWrite(A3,Output);

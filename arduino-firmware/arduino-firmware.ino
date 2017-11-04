@@ -69,7 +69,7 @@ int initiat=1;
 
 void setup() {
   /* initialize serial                                       */
-  Serial.begin(115200);
+  Serial.begin(9600);
   Input = analogRead(A4);
   Setpoint =analogRead(A5);
 
