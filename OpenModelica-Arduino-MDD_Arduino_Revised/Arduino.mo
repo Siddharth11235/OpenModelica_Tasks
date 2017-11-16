@@ -52,6 +52,7 @@ Arduino.SerialCommunication.Functions.<b>read_serial</b>(handle,size);
 </html>"));
       end read_serial;
 
+
       //algorithm
       //Modelica.Utilities.Streams.print(String(buf));
 
@@ -173,13 +174,14 @@ To map a UNO, ports 2-13 are available (0 and 1 are used for serial transmission
   </p>
   </html>"));
       end delay;
-      
+
       function wakeup
-      extends Modelica.Icons.Function;
+        extends Modelica.Icons.Function;
       
-      external wakeup() annotation(
-        Library = "SerialComm");
-      annotation(Documentation(info = "<html>
+        external wakeup() annotation(
+          Library = "SerialComm");
+        annotation(
+          Documentation(info = "<html>
       <h4>Syntax</h4>
       <blockquote><pre>
       Arduino.SerialCommunication.Functions.<b>Block for code running with interrupts</b>;
@@ -187,22 +189,19 @@ To map a UNO, ports 2-13 are available (0 and 1 are used for serial transmission
       </html>"));
       end wakeup;
 
-
       function noInterrupts
-    extends Modelica.Icons.Function;
-    
-      external noInterrupts() annotation(
-        Library = "noInterrupts");
-      annotation(Documentation(info = "<html>
+        extends Modelica.Icons.Function;
+      
+        external noInterrupts() annotation(
+          Library = "noInterrupts");
+        annotation(
+          Documentation(info = "<html>
     <h4>Syntax</h4>
     <blockquote><pre>
     Arduino.SerialCommunication.Functions.<b>Block for code running without interrupts</b>;
     </pre></blockquote>
     </html>"));
-    end noInterrupts;
-
-
-
+      end noInterrupts;
 
       function cmd_analog_in "Command to read in analog signal from a connected Arduino board"
         extends Modelica.Icons.Function;
@@ -262,7 +261,6 @@ The input port accepts the value from 0 to 255 which is correspoding to the duty
   </p>
   </html>"));
       end cmd_analog_in_volt;
-
 
       function cmd_analog_out_volt "Command to sent out analog signal to a connected Arduino board"
         extends Modelica.Icons.Function;
@@ -548,8 +546,6 @@ Arduino.SerialCommunication.Functions.<b>ieeesingle2num</b>(hexa);
             experiment(StartTime = 0, StopTime = 10, Tolerance = 1e-6, Interval = 10));
         end led_blue;
 
-
-
         model led_blue_delay "Turn on Blue LED for a period of 2 seconds"
           extends Modelica.Icons.Example;
           import sComm = Arduino.SerialCommunication.Functions;
@@ -630,16 +626,6 @@ Arduino.SerialCommunication.Functions.<b>ieeesingle2num</b>(hexa);
           annotation(
             experiment(StartTime = 0, StopTime = 10, Tolerance = 1e-6, Interval = 10));
         end led_blink;
-
-
-
-
-
-
-
-
-
-
 
         model led_green_blink "This will turn on and turn off the green LED for every second for 5 times"
           extends Modelica.Icons.Example;
@@ -782,7 +768,6 @@ Arduino.SerialCommunication.Functions.<b>ieeesingle2num</b>(hexa);
           annotation(
             experiment(StartTime = 0, StopTime = 10, Tolerance = 1e-6, Interval = 0.02));
         end ldr_led;
-
 
         model ldr_read "Reading light intensity using ldr"
           extends Modelica.Icons.Example;
@@ -1518,7 +1503,7 @@ Arduino.SerialCommunication.Functions.<b>ieeesingle2num</b>(hexa);
             Placement(visible = true, transformation(origin = {-40, 40}, extent = {{-20, -20}, {20, 20}}, rotation = 0)));
           Modelica_DeviceDrivers.EmbeddedTargets.AVR.Blocks.SynchronizeRealtime synchronizeRealtime1(timer = Modelica_DeviceDrivers.EmbeddedTargets.AVR.Types.TimerSelect.Timer0) annotation(
             Placement(visible = true, transformation(origin = {40, 42}, extent = {{-20, -20}, {20, 20}}, rotation = 0)));
-          Modelica_DeviceDrivers.EmbeddedTargets.AVR.Blocks.ADC adc(analogPort = Modelica_DeviceDrivers.EmbeddedTargets.AVR.Types.AnalogPort.A4, prescaler = Modelica_DeviceDrivers.EmbeddedTargets.AVR.Types.AnalogPrescaler.'1/128', voltageReference = 1024, voltageReferenceSelect = Modelica_DeviceDrivers.EmbeddedTargets.AVR.Types.VRefSelect.Internal) annotation(
+          Modelica_DeviceDrivers.EmbeddedTargets.AVR.Blocks.ADC adc(analogPort = Modelica_DeviceDrivers.EmbeddedTargets.AVR.Types.AnalogPort.A5, prescaler = Modelica_DeviceDrivers.EmbeddedTargets.AVR.Types.AnalogPrescaler.'1/128', voltageReference = 1024, voltageReferenceSelect = Modelica_DeviceDrivers.EmbeddedTargets.AVR.Types.VRefSelect.Internal) annotation(
             Placement(visible = true, transformation(origin = {-40, -20}, extent = {{-20, -20}, {20, 20}}, rotation = 0)));
           Modelica.Blocks.Interaction.Show.RealValue realValue1(use_numberPort = true) annotation(
             Placement(visible = true, transformation(origin = {39, -21}, extent = {{-15, -19}, {15, 19}}, rotation = 0)));

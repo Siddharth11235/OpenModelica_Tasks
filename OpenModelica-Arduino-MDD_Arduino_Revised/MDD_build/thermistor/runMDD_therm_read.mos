@@ -1,10 +1,10 @@
 loadModel(Modelica);
 getErrorString();
 
-loadFile("/home/souradip/Modelica_DeviceDrivers/Modelica_DeviceDrivers/package.mo");
+loadFile("/home/siddharth/Modelica_DeviceDrivers/Modelica_DeviceDrivers/package.mo");
 getErrorString();
 
-loadFile("/home/souradip/OpenModelica/Arduino.mo");
+loadFile("/home/siddharth/OpenModelica_Tasks/OpenModelica-Arduino-MDD_Arduino_Revised/Arduino.mo");
 getErrorString();
 
 translateModel(Arduino.SerialCommunication.MDD_Examples.MDD_thermistor.MDD_therm_read, fileNamePrefix="therm_read");

@@ -55,7 +55,7 @@ avr-objcopy -O ihex -R .eeprom therm_read therm_read.hex
 if [ $? -ne 0 ]; then
 	exit 1
 fi 
-avrdude -F -V -c arduino -p ATMEGA328P -P $port -b $b_rate -U flash:w:therm_read.hex
+avrdude -D -F -V -c arduino -p ATMEGA328P -P $port -b $b_rate -U flash:w:therm_read.hex
 if [ $? -ne 0 ]; then
 	exit 1
 fi
